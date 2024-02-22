@@ -36,16 +36,6 @@
     <!--START HEADER NAVIGATION-->
     <div class='navigation-wrap'>
         <div class='container'>
-            <% const navigation = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
-            <nav class='navigation'>
-                <ul class='navigation__items'>
-                    <% navigation.forEach(function(item) { %>
-                    <li class='navigation__item'>
-                        <a href='#' class='navigation__link <%if (item == 'LISP') {%>navigation__link_active<%}%>'><%= item %></a>
-                    </li>
-                    <% }); %>
-                </ul>
-            </nav>
             <form class='form-search' action='#'>
                 <input type='text' class='form-search__input'>
             </form>
@@ -58,25 +48,15 @@
 <div class='container main-section'>
     <!--START BREADCRUMBS-->
     <div class='breadcrumbs'>
-        <% const breadcrumbs = ['LISP', 'Одежда', 'Футболки'] %>
+        LISP/Одежда/ Футболки
         <ul class='breadcrumbs__items'>
-            <% breadcrumbs.forEach(function(item, index) { %>
-            <li class='breadcrumbs__item'>
-                <a href='#' class='breadcrumbs__link <%if (index == breadcrumbs.length - 1) {%>breadcrumbs__link_active<%}%>'><%= item %></a>
-                <% if (index !== breadcrumbs.length - 1) { %>
-                /
-                <% } %>
-            </li>
-            <% }); %>
+            
         </ul>
     </div>
     <!--END BREADCRUMBS-->
     <!--START PRODUCT-->
     <div class='product__wrap'>
         <!--START PRODUCT PHOTO-->
-        <div class='product__photo'>
-            <% const color = ['white', 'green', 'yellow']; %>
-            <p>
                 <img src="img/tshirts/tshirt_white.jpg" width="400" height="400">
               </p>
               <p>
@@ -99,21 +79,16 @@
                 <div class='property-section property-section_size'>
                     <span class='property-section__text'>Размер:</span>
                     <div class='property-section__wrap'>
-                        <% const size = ['S', 'M', 'L'] %>
-                        <ul id='sizeList' class='property-section__items'>
-                            <% size.forEach(function (item) { %>
-                            <li data-type='size' data-value='<%=item%>' class='size__item <%if (item == 'M') {%>size__item_active<%}%>'><%=item %></li>
-                            <% }) %>
-                        </ul>
-                    </div>
+                         S M L 
+                        
                 </div>
                 <div class='property-section property-section_color'>
                     <span class='property-section__text'>Цвет:</span>
                     <div class='property-section__wrap'>
                         <ul id='colorList' class='property-section__items'>
-                            <% color.forEach(function (item) { %>
-                            <li class='color__item color__item-<%=item%> <%if (item == 'white') {%>color__item_active<%}%>' data-type='color' data-value='<%=item%>' data-color='<%=item%>'></li>
-                            <% }) %>
+                            <div class='product__photo'>
+                                white/yellow/green
+                                <p>
                         </ul>
                     </div>
                 </div>
@@ -139,90 +114,64 @@
 <!--END ARTICLE-->
 <!--START FOOTER-->
 <footer class='footer container__footer'>
-    <% const service = {
-        title: 'Сервис и поддержка',
-        menus: {
-            menu1: [
-                'Как сделать заказ',
-                'Возврат товара',
-                'Публичная оферта',
-                'Доставка'
-            ],
-            menu2: [
-                'Способы оплаты',
-                'Правила продажи',
-                'Возврат денежных средств',
-                'Вопросы и ответы'
-            ]
-        }
-    }
-    %>
-    <% const about = {
-        title: 'О компании',
-        menus: {
-            menu1: [
-                'О нас',
-                'Контакты',
-                'Вакансии',
-                'Партнерам'
-            ],
-            menu2: [
-                'Сертификаты',
-                'Преимущества',
-                'Наши скидки'
-            ]
-        }
-    }
-    %>
+    Сервис и поддержка
+         
+                Как сделать заказ,
+                Возврат товара,
+                Публичная оферта,
+                Доставка,
+            
+                Способы оплаты,
+                Правила продажи,
+                Возврат денежных средств,
+                Вопросы и ответы
+            
+        
+    
+
+                
+    
+       О компании,
+        
+           
+                О нас,
+                Контакты,
+                Вакансии,
+                Партнерам,
+
+            
+                Сертификаты,
+                Преимущества,
+                Наши скидки
+    
+
     <div class='container'>
         <div class='footer__content'>
             <div class='footer__section footer__section_left'>
                 <div class='footer__content-block footer__menu-block'>
                     <h4 class='footer__title'><%= service.title %></h4>
                     <div class='footer__menu-wrapper'>
-                        <% Object.keys(service.menus).map(function(menu) { %>
-                        <ul class='footer__menu'>
-                            <% service.menus[menu].forEach(function (menuItem) { %>
-                            <li class='footer__menu-item'><a class='footer__menu-link' href='#'><%= menuItem %></a></li>
-                            <% }) %>
-                        </ul>
-                        <% }) %>
+    
                     </div>
                 </div>
                 <div class='footer__content-block footer__menu-block'>
-                    <h4 class='footer__title'><%= about.title %></h4>
+
 
                     <div class='footer__menu-wrapper'>
-                        <% Object.keys(about.menus).map(function(menu) { %>
-                        <ul class='footer__menu'>
-                            <% about.menus[menu].forEach(function (menuItem) { %>
-                            <li class='footer__menu-item'><a class='footer__menu-link' href='#'><%= menuItem %></a></li>
-                            <% }) %>
-                        </ul>
-                        <% }) %>
+                        
                     </div>
                 </div>
             </div>
             <div class='footer__section footer__section_right'>
                 <div class='footer__content-block'>
-                    <%const features = {
-                        delivery: 'бесплатная доставка от 4000 ₽',
-                        heart: 'пробники в подарок при каждой покупке',
-                        cup: 'акции и подарки за покупку'
-                    }%>
-                    <ul class='footer__features'>
-                        <% Object.keys(features).map(function (key) {%>
-                        <li class='footer__features-item footer__features-item_<%= key%>'><%= features[key]%></li>
-                        <%})%>
+                    
+                        бесплатная доставка от 4000 ₽,
+                        пробники в подарок при каждой покупке,
+                        акции и подарки за покупку'
                     </ul>
                 </div>
                 <div class='footer__content-block footer__content-block__social'>
-                    <% const social = ['facebook', 'twitter', 'instagram']
-                    social.forEach(function(item) { %>
-                    <a href='#' class='footer__social-item'>
-                        <img src='img/icons/<%= item%>.svg' class='footer__social-img' alt='<%= item%>'>
-                    </a>
-                    <%})%>
+                     facebook, twitter, instagram
                 </div>
             </div>
         </div>
